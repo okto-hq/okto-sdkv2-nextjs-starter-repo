@@ -51,8 +51,6 @@ okto-sdkv2-nextjs-template-app:
     enabled: true
     minReplicas: 2
     maxReplicas: 4
-  env:
-    NEXT_PUBLIC_ENVIRONMENT: 'sandbox'
   envFromSecrets:
     - variable: NEXT_PUBLIC_CLIENT_SWA
       secretId: &oktohq-sdkv2-nextjs oktohq/okto-sdkv2-nextjs
@@ -66,6 +64,9 @@ okto-sdkv2-nextjs-template-app:
     - variable: VITE_GOOGLE_CLIENT_ID
       secretId: *oktohq-sdkv2-nextjs
       secretKey: VITE_GOOGLE_CLIENT_ID
+    - variable: NEXT_PUBLIC_ENVIRONMENT
+      secretId: *oktohq-sdkv2-nextjs
+      secretKey: NEXT_PUBLIC_ENVIRONMENT
   tolerations:
     - effect: NoSchedule
       key: application
