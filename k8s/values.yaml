@@ -51,13 +51,15 @@ okto-sdkv2-nextjs-template-app:
     enabled: true
     minReplicas: 2
     maxReplicas: 4
+  env:
+    NEXT_PUBLIC_ENVIRONMENT: 'production'
   envFromSecrets:
-    - variable: clientSWA
+    - variable: NEXT_PUBLIC_CLIENT_SWA
       secretId: &oktohq-sdkv2-nextjs oktohq/okto-sdkv2-nextjs
-      secretKey: clientSWA
-    - variable: clientPrivateKey
+      secretKey: NEXT_PUBLIC_CLIENT_SWA
+    - variable: NEXT_PUBLIC_CLIENT_PRIVATE_KEY
       secretId: *oktohq-sdkv2-nextjs
-      secretKey: clientPrivateKey
+      secretKey: NEXT_PUBLIC_CLIENT_PRIVATE_KEY
     - variable: AUTH_SECRET
       secretId: *oktohq-sdkv2-nextjs
       secretKey: AUTH_SECRET
