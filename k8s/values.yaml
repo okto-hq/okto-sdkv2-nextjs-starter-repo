@@ -52,7 +52,7 @@ okto-sdkv2-nextjs-template-app:
     minReplicas: 2
     maxReplicas: 4
   env:
-    NEXT_PUBLIC_ENVIRONMENT: 'production'
+    NEXT_PUBLIC_ENVIRONMENT: 'sandbox'
   envFromSecrets:
     - variable: NEXT_PUBLIC_CLIENT_SWA
       secretId: &oktohq-sdkv2-nextjs oktohq/okto-sdkv2-nextjs
